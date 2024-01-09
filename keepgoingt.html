@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+
+
+<title>KEEP GOING...</title>
+  <meta name="description" content="Page by Anshpreet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FFA500"> <!-- Set the theme color to orange (#FFA500) -->
+   <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/8289/8289722.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(245, 245, 245, 0.8) 100%);
+        }
+
+        .notification-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: none;
+            z-index: 1000;
+            font-family: 'Lemon Milk', sans-serif;
+            font-size: 16px;
+            border: 2px solid transparent;
+            animation: borderFade 3s infinite alternate;
+        }
+
+        @keyframes borderFade {
+            from {
+                border-color: rgba(255, 255, 255, 0.15);
+            }
+            to {
+                border-color: #fff;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <style>
+      /* Your existing styles for the notification bar */
+      .notification-bar {
+          /* Add your styles here */
+        
+          padding: 10px;
+          /* Add any other styles as needed */
+      }
+
+      /* Media query to hide the notification bar on screens with a maximum width of 767 pixels (adjust as needed) */
+      @media screen and (max-width: 767px) {
+          .notification-bar {
+              display: none;
+          }
+      }
+    </style>
+    </head>
+    <body>
+    <!-- Your HTML content -->
+    <div id="notification" class="notification-bar">This is the notification bar</div>
+
+    <script>
+      var quotes = [
+        'Success is no accident. It is hard work, perseverance, learning, studying, sacrifice, and most of all, love of what you are doing.',
+        'Your dreams are on the other side of your efforts. Keep pushing forward!',
+        'The only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle.',
+        'Believe you can and you’re halfway there. Keep believing in yourself!',
+        'Every morning brings new potential. You have 1 year – make it count!',
+        'Don’t watch the clock; do what it does. Keep going!',
+        'You are capable of amazing things. Believe in your potential!',
+        'The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will.',
+        'You are not studying for an exam; you are studying for your life. Make it count!',
+        'It’s not about how bad you want it. It’s about how hard you are willing to work for it.'
+      ];
+
+      var currentIndex = Math.floor(Math.random() * quotes.length);
+      var notificationElement = document.getElementById('notification');
+
+      function typeWriter(text, element, i, callback) {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+          setTimeout(function () {
+            typeWriter(text, element, i, callback);
+          }, 100);
+        } else {
+          setTimeout(callback, 20000);
+        }
+      }
+
+      function clearText(element, i, callback) {
+        if (i >= 0) {
+          element.textContent = quotes[currentIndex].substring(0, i);
+          i--;
+          setTimeout(function () {
+            clearText(element, i, callback);
+          }, 50);
+        } else {
+          callback();
+        }
+      }
+
+      function showNextQuote() {
+        currentIndex = (currentIndex + 1) % quotes.length;
+        updateNotification();
+      }
+
+      function updateNotification() {
+        clearText(notificationElement, quotes[currentIndex].length, function () {
+          typeWriter(quotes[currentIndex], notificationElement, 0, showNextQuote);
+        });
+
+        // Show the notification bar
+        notificationElement.style.display = 'block';
+      }
+
+      // Update the notification initially
+      updateNotification();
+
+      // Change the quote every 20 seconds
+      setInterval(function () {
+        updateNotification();
+      }, 20000);
+    </script>
+
+
+
+
+  </body>
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+  <title>Next Mims Test</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="countdown">
+  <div id='tiles'></div>
+  <div class="labels">
+    <li>Days</li>
+    <li>Hours</li>
+    <li>Mins</li>
+    <li>Secs</li>
+  </div>
+</div>
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoplaying Music</title>
+    <style>
+        /* Hide the default audio controls */
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Audio element with autoplay and loop attributes -->
+<audio autoplay loop>
+    <source src="https://www.chosic.com/wp-content/uploads/2021/01/fm-freemusic-inspiring-optimistic-upbeat-energetic-guitar-rhythm(chosic.com).mp" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Optional: Add a message for users whose browsers do not support the audio element -->
+<noscript>
+    <p>Sorry, your browser does not support the audio tag, but you can still enjoy the music by clicking <a href="https://www.chosic.comwp-content/uploads/2021/01/fm-freemusic-inspiring-optimistic-upbeat-energetic-guitar-rhythm(chosic.com).mp3">here</a>.</p>
+</noscript>
+
+</body>
+</html>
+
+
+
+
+
+<style>
+  /* Change font to Pacifico */
+  body {
+    font-family: 'Pacifico', cursive;
+  }
+
+  /* Or change font to Typewriter */
+  /*
+  body {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  */
+
+  /* Additional styling for demonstration purposes */
+  ::selection {
+    background-color: #4B0082;
+    color: #ffffff;
+  }
+
+  body {
+    line-height: 1.6;
+    margin: 40px;
+  }
+</style>
+
+<!-- Link to Google Fonts for Pacifico -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivational Study Alerts</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+
+<script>
+    const motivationalQuotes = [
+        "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        "The only way to do great work is to love what you do.",
+        "Don't watch the clock; do what it does. Keep going.",
+        "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work.",
+        "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+        "The future belongs to those who believe in the beauty of their dreams.",
+        "The only place where success comes before work is in the dictionary.",
+        "You have within you right now, everything you need to deal with whatever the world can throw at you.",
+        "Success is not in what you have, but who you are.",
+        "Do something today that your future self will thank you for.",
+        "Don't stop when you're tired. Stop when you're done.",
+        "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will.",
+        "Success is not just about making money. It's about making a difference.",
+        "The expert in anything was once a beginner."
+    ];
+
+    // Function to show a random motivational quote as an alert on page load
+    function showMotivationalQuote() {
+        const randomIndex = Math.floor(Math.random() * motivationalQuotes.length);
+        const randomQuote = motivationalQuotes[randomIndex];
+
+        // Display an alert with the motivational quote
+        alert(randomQuote);
+    }
+
+    // Call the function on page load
+    window.addEventListener('load', showMotivationalQuote);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<div class="context-menu jeekeep-going">
+  <button id="fullscreen-btn">Fullscreen</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Autoplay Hidden Music Player</title>
+      <style>
+          #myAudio {
+              display: none; /* Hide the audio player */
+          }
+      </style>
+  </head>
+  <body>
+
+  <audio id="myAudio" autoplay loop>
+      <source src="https://etus.link/mimstestmusicbg" type="audio/mp3">
+      Your browser does not support the audio tag.
+  </audio>
+
+  <script>
+      const audio = document.getElementById("myAudio");
+
+      audio.addEventListener("ended", function () {
+          audio.currentTime = 0; // Reset the audio to the beginning
+          audio.play(); // Start playing again
+      });
+  </script>
+
+  </body>
+  </html>
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Anton'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="night">
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+</div>
+<!-- partial -->
+
+
+
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  body {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    font-family: "Anton", sans-serif;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .night {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(45deg);
+  }
+
+  .shooting_star {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px #699bff);
+    -webkit-animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+            animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+  }
+  .shooting_star::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
+    transform: translateX(50%) rotateZ(45deg);
+    border-radius: 100%;
+    -webkit-animation: shining 3000ms ease-in-out infinite;
+            animation: shining 3000ms ease-in-out infinite;
+  }
+  .shooting_star::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
+    transform: translateX(50%) rotateZ(45deg);
+    border-radius: 100%;
+    -webkit-animation: shining 3000ms ease-in-out infinite;
+            animation: shining 3000ms ease-in-out infinite;
+    transform: translateX(50%) rotateZ(-45deg);
+  }
+  .shooting_star:nth-child(1) {
+    top: calc(50% - 96px);
+    left: calc(50% - 120px);
+    -webkit-animation-delay: 9682ms;
+            animation-delay: 9682ms;
+  }
+  .shooting_star:nth-child(1)::before, .shooting_star:nth-child(1)::after {
+    -webkit-animation-delay: 9682ms;
+            animation-delay: 9682ms;
+  }
+  .shooting_star:nth-child(2) {
+    top: calc(50% - -130px);
+    left: calc(50% - 268px);
+    -webkit-animation-delay: 1581ms;
+            animation-delay: 1581ms;
+  }
+  .shooting_star:nth-child(2)::before, .shooting_star:nth-child(2)::after {
+    -webkit-animation-delay: 1581ms;
+            animation-delay: 1581ms;
+  }
+  .shooting_star:nth-child(3) {
+    top: calc(50% - -199px);
+    left: calc(50% - 257px);
+    -webkit-animation-delay: 5612ms;
+            animation-delay: 5612ms;
+  }
+  .shooting_star:nth-child(3)::before, .shooting_star:nth-child(3)::after {
+    -webkit-animation-delay: 5612ms;
+            animation-delay: 5612ms;
+  }
+  .shooting_star:nth-child(4) {
+    top: calc(50% - 193px);
+    left: calc(50% - 130px);
+    -webkit-animation-delay: 4091ms;
+            animation-delay: 4091ms;
+  }
+  .shooting_star:nth-child(4)::before, .shooting_star:nth-child(4)::after {
+    -webkit-animation-delay: 4091ms;
+            animation-delay: 4091ms;
+  }
+  .shooting_star:nth-child(5) {
+    top: calc(50% - -44px);
+    left: calc(50% - 265px);
+    -webkit-animation-delay: 6327ms;
+            animation-delay: 6327ms;
+  }
+  .shooting_star:nth-child(5)::before, .shooting_star:nth-child(5)::after {
+    -webkit-animation-delay: 6327ms;
+            animation-delay: 6327ms;
+  }
+  .shooting_star:nth-child(6) {
+    top: calc(50% - 29px);
+    left: calc(50% - 221px);
+    -webkit-animation-delay: 5041ms;
+            animation-delay: 5041ms;
+  }
+  .shooting_star:nth-child(6)::before, .shooting_star:nth-child(6)::after {
+    -webkit-animation-delay: 5041ms;
+            animation-delay: 5041ms;
+  }
+  .shooting_star:nth-child(7) {
+    top: calc(50% - -101px);
+    left: calc(50% - 256px);
+    -webkit-animation-delay: 561ms;
+            animation-delay: 561ms;
+  }
+  .shooting_star:nth-child(7)::before, .shooting_star:nth-child(7)::after {
+    -webkit-animation-delay: 561ms;
+            animation-delay: 561ms;
+  }
+  .shooting_star:nth-child(8) {
+    top: calc(50% - 71px);
+    left: calc(50% - 285px);
+    -webkit-animation-delay: 1543ms;
+            animation-delay: 1543ms;
+  }
+  .shooting_star:nth-child(8)::before, .shooting_star:nth-child(8)::after {
+    -webkit-animation-delay: 1543ms;
+            animation-delay: 1543ms;
+  }
+  .shooting_star:nth-child(9) {
+    top: calc(50% - 28px);
+    left: calc(50% - 160px);
+    -webkit-animation-delay: 6011ms;
+            animation-delay: 6011ms;
+  }
+  .shooting_star:nth-child(9)::before, .shooting_star:nth-child(9)::after {
+    -webkit-animation-delay: 6011ms;
+            animation-delay: 6011ms;
+  }
+  .shooting_star:nth-child(10) {
+    top: calc(50% - 84px);
+    left: calc(50% - 211px);
+    -webkit-animation-delay: 2602ms;
+            animation-delay: 2602ms;
+  }
+  .shooting_star:nth-child(10)::before, .shooting_star:nth-child(10)::after {
+    -webkit-animation-delay: 2602ms;
+            animation-delay: 2602ms;
+  }
+  .shooting_star:nth-child(11) {
+    top: calc(50% - -158px);
+    left: calc(50% - 1px);
+    -webkit-animation-delay: 2605ms;
+            animation-delay: 2605ms;
+  }
+  .shooting_star:nth-child(11)::before, .shooting_star:nth-child(11)::after {
+    -webkit-animation-delay: 2605ms;
+            animation-delay: 2605ms;
+  }
+  .shooting_star:nth-child(12) {
+    top: calc(50% - 131px);
+    left: calc(50% - 56px);
+    -webkit-animation-delay: 1061ms;
+            animation-delay: 1061ms;
+  }
+  .shooting_star:nth-child(12)::before, .shooting_star:nth-child(12)::after {
+    -webkit-animation-delay: 1061ms;
+            animation-delay: 1061ms;
+  }
+  .shooting_star:nth-child(13) {
+    top: calc(50% - 52px);
+    left: calc(50% - 268px);
+    -webkit-animation-delay: 6117ms;
+            animation-delay: 6117ms;
+  }
+  .shooting_star:nth-child(13)::before, .shooting_star:nth-child(13)::after {
+    -webkit-animation-delay: 6117ms;
+            animation-delay: 6117ms;
+  }
+  .shooting_star:nth-child(14) {
+    top: calc(50% - -105px);
+    left: calc(50% - 231px);
+    -webkit-animation-delay: 5729ms;
+            animation-delay: 5729ms;
+  }
+  .shooting_star:nth-child(14)::before, .shooting_star:nth-child(14)::after {
+    -webkit-animation-delay: 5729ms;
+            animation-delay: 5729ms;
+  }
+  .shooting_star:nth-child(15) {
+    top: calc(50% - -151px);
+    left: calc(50% - 47px);
+    -webkit-animation-delay: 472ms;
+            animation-delay: 472ms;
+  }
+  .shooting_star:nth-child(15)::before, .shooting_star:nth-child(15)::after {
+    -webkit-animation-delay: 472ms;
+            animation-delay: 472ms;
+  }
+  .shooting_star:nth-child(16) {
+    top: calc(50% - -46px);
+    left: calc(50% - 134px);
+    -webkit-animation-delay: 4618ms;
+            animation-delay: 4618ms;
+  }
+  .shooting_star:nth-child(16)::before, .shooting_star:nth-child(16)::after {
+    -webkit-animation-delay: 4618ms;
+            animation-delay: 4618ms;
+  }
+  .shooting_star:nth-child(17) {
+    top: calc(50% - -114px);
+    left: calc(50% - 292px);
+    -webkit-animation-delay: 742ms;
+            animation-delay: 742ms;
+  }
+  .shooting_star:nth-child(17)::before, .shooting_star:nth-child(17)::after {
+    -webkit-animation-delay: 742ms;
+            animation-delay: 742ms;
+  }
+  .shooting_star:nth-child(18) {
+    top: calc(50% - 66px);
+    left: calc(50% - 217px);
+    -webkit-animation-delay: 6637ms;
+            animation-delay: 6637ms;
+  }
+  .shooting_star:nth-child(18)::before, .shooting_star:nth-child(18)::after {
+    -webkit-animation-delay: 6637ms;
+            animation-delay: 6637ms;
+  }
+  .shooting_star:nth-child(19) {
+    top: calc(50% - 125px);
+    left: calc(50% - 213px);
+    -webkit-animation-delay: 7221ms;
+            animation-delay: 7221ms;
+  }
+  .shooting_star:nth-child(19)::before, .shooting_star:nth-child(19)::after {
+    -webkit-animation-delay: 7221ms;
+            animation-delay: 7221ms;
+  }
+  .shooting_star:nth-child(20) {
+    top: calc(50% - -193px);
+    left: calc(50% - 153px);
+    -webkit-animation-delay: 1496ms;
+            animation-delay: 1496ms;
+  }
+  .shooting_star:nth-child(20)::before, .shooting_star:nth-child(20)::after {
+    -webkit-animation-delay: 1496ms;
+            animation-delay: 1496ms;
+  }
+
+  @-webkit-keyframes tail {
+    0% {
+      width: 0;
+    }
+    30% {
+      width: 100px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+
+  @keyframes tail {
+    0% {
+      width: 0;
+    }
+    30% {
+      width: 100px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  @-webkit-keyframes shining {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 30px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  @keyframes shining {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 30px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  @-webkit-keyframes shooting {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(300px);
+    }
+  }
+  @keyframes shooting {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(300px);
+    }
+  }
+  @-webkit-keyframes sky {
+    0% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(405deg);
+    }
+  }
+  @keyframes sky {
+    0% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(405deg);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Styling for the context menu */
+  .context-menu {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Glassmorphism effect */
+  .jeekeep-going {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  /* Styling for the fullscreen button */
+  #fullscreen-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #fullscreen-btn:hover {
+    background-color: #2980b9;
+  }
+
+
+
+
+
+  
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+  // Function to toggle fullscreen mode
+  function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  }
+
+  // Show context menu on right-click
+  window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+    const contextMenu = document.querySelector('.context-menu');
+    contextMenu.style.display = 'block';
+    contextMenu.style.top = `${e.clientY}px`;
+    contextMenu.style.left = `${e.clientX}px`;
+  });
+
+  // Hide context menu on click outside
+  window.addEventListener('click', function (e) {
+    const contextMenu = document.querySelector('.context-menu');
+    if (!contextMenu.contains(e.target)) {
+      contextMenu.style.display = 'none';
+    }
+  });
+
+  // Toggle fullscreen on button click
+  document.getElementById('fullscreen-btn').addEventListener('click', toggleFullScreen);
+
+
+
+
+
+
+
+  
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
