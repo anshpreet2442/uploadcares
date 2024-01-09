@@ -1,0 +1,182 @@
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="UPLOAD YOUR PHOTOS HERE AND GET TAGGED IN ONE OF OUR PROJECTS">
+<meta name="keywords" content="free,upload,images,alternative,glassmorphism,uploadcare,replit,anshpreet2442,keywords,here">
+<meta name="author" content="Anshpreet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFA500"> <!-- Set the theme color to orange (#FFA500) -->
+ <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/8191/8191581.png">
+<!-- Disable right-click -->
+<script>
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+</script>
+
+
+
+
+
+
+
+<title>Uploadcare Image uploader</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Demo</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1702106951084-40dc9329361d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=mono-log-ls1-GTFNwcM-unsplash.jpg') center/cover;
+      font-family: Arial, sans-serif;
+    }
+
+    .glassmorphism-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="glassmorphism-box">
+    <script type="module">
+      import * as LR from 'https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.30.5/web/lr-file-uploader-regular.min.js';
+      LR.registerBlocks(LR);
+    </script>
+
+    <lr-config
+      ctx-name="my-uploader"
+      pubkey="fac12ca67ab4fd43fdcc"
+    ></lr-config>
+
+    <lr-file-uploader-regular
+      ctx-name="my-uploader"
+      css-src="https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.30.5/web/lr-file-uploader-regular.min.css"
+    ></lr-file-uploader-regular>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+
+  .my-config {
+    --darkmode: 0;
+    --h-accent: 223;
+    --s-accent: 100%;
+    --l-accent: 61%;
+  }
+
+
+
+
+
+
+  
+</style>
+
+
+
+
+
+<lr-config
+    ctx-name="my-uploader"
+    pubkey="fac12ca67ab4fd43fdcc"
+    max-local-file-size-bytes="10000000"
+    img-only="true"
+    source-list="local, url, camera, dropbox, facebook, gdrive, gphotos, instagram"
+></lr-config>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
